@@ -141,7 +141,7 @@ color: #660066;
 #wrapper {
     font-size: 12px;
     font-family: Verdana, Arial, Helvetica, sans-serif;
-    padding-left: 10px;
+    padding: 0 10px;
 }
 
 #wrapper .article {
