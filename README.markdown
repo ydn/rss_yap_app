@@ -21,16 +21,15 @@ A simple framework for generating a Yahoo! Application Platform application from
 * Set the "Small View Default Content" to:
 
         <style>
-        .loading {
+        #loading {
            font-size: 12px;
            font-family: Verdana, Arial, Helvetica, sans-serif;
            margin: 10px;
         }
         </style>
-        <yml:include>
-           <div class="loading">Loading ...</div>
-        </yml:include>
-        
+        <yml:include replace="loading">
+           <div id="loading">Loading ...</div>
+        </yml:include>   
         
 * Click the "Save" button
 * Click the "Preview" button to see your app
