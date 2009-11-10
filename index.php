@@ -7,11 +7,12 @@
 **/
 
 // BEGIN: config
-$feedUrl = 'http://rss.cnn.com/rss/cnn_topstories.rss';
+$feedUrl = 'http://rss.news.yahoo.com/rss/asia';
 $appTitle = 'app title';
 $appDescription = 'Website Description would go here';
-$appHeaderImage = 'http://github.com/erikeldridge/rss_yap_app/blob/master/preview.png';
-$appBackgroundImage = 'http://github.com/erikeldridge/rss_yap_app/blob/master/sprite.png';
+$appHeaderImage = 'http://github.com/erikeldridge/rss_yap_app/raw/master/preview.png';
+$appBackgroundImage = 'http://github.com/erikeldridge/rss_yap_app/raw/master/sprite.gif';
+$appExternalUrl = 'http://example.com';
 // END: config
 
 //BEGIN: XML parser
@@ -127,9 +128,10 @@ color: #660066;
     margin-bottom: 10px;
 }
 
-#header .col .grayUrl {
-    font-size: 75%;
+#header .col .grayUrl a {
+    font-size: 80%;
     color: #ccc;
+    text-decoration: none;
 }
 
 #header hr {
@@ -174,7 +176,7 @@ color: #660066;
 	<div class="col">
 		<div align="left" class="headOne"><yml:a><?php echo $appTitle; ?></yml:a></div>
 		<div align="left" class="description"><?php echo $appDescription; ?></div>
-		<div align="left" class="grayUrl"> more >></div>
+		<div align="left" class="grayUrl"><a href="<?= $appExternalUrl ?>">more >></a></div>
 	</div>
     <div style="clear:both;"></div>
     <hr/>
