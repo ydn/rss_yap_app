@@ -4,8 +4,8 @@ A simple framework for generating a Yahoo! Application Platform application from
 
 ## Installation
 
-* Click the `download` button above or 
-* Clone the repository: `git clone git://github.com/erikeldridge/yapgen2.git`
+* Click the `download` button above - OR - 
+* Clone this repository: `git clone git://github.com/erikeldridge/yapgen2.git`
 
 ## Usage
 
@@ -17,11 +17,18 @@ A simple framework for generating a Yahoo! Application Platform application from
 
 * Upload this directory to your server
 * Create a new YAP application
-* Set the base URL of the app to point to the location of this directory on your server
-* Set the small view default code to
+* Set the "Application URL" of the app to point to the location of this directory on your server
+* Set the "Small View Default Content" to:
 
         <yml:include>Loading ...</yml:include>
         
-* Preview your app
+* Click the "Save" button
+* Click the "Preview" button to see your app
 
+### Customization
 
+#### Setting the feed url
+
+* Open index.php in a text editor
+* Set the "$feedUrl" variable at the top of the file to point to the RSS feed of your choice
+* Save the file and reload the app
