@@ -1,15 +1,22 @@
 <?php 
 
+// BEGIN: config
+$feedUrl = 'http://rss.news.yahoo.com/rss/topstories';
+$appTitle = 'app title';
+$appDescription = 'Website Description would go here';
+$appHeaderImage = 'http://test.erikeldridge.com/yapgen2/preview.png';
+$appBackgroundImage = 'http://test.erikeldridge.com/yapgen2/sprite.gif';
+// END: config
+
+//BEGIN: XML parser
 $insideitem = false;
 $tag = "";
-$title = "";
-$description = "";
-$link = "";
-
-
+$itemTitle = "";
+$itemDescription = "";
+$itemLink = "";
 
 function startElement($parser, $name, $attrs) {
-global $insideitem, $tag, $title, $description, $link;
+global $insideitem, $tag, $itemTitle, $itemDescription, $itemLink;
 if ($insideitem) {
 $tag = $name;
 } elseif ($name == "ITEM") {
@@ -18,39 +25,39 @@ $insideitem = true;
 }
 
 function endElement($parser, $name) {
-    global $insideitem, $tag, $title, $description, $link;
+    global $insideitem, $tag, $itemTitle, $itemDescription, $itemLink;
     $article = "<div class='article'>";
     if ($name == "ITEM") {
         print($article);
-        printf("<div class='title'><a href='%s'>%s</a></div>", trim($link), htmlspecialchars(trim($title)) );
-        printf('<div class="description">%s</div></div>',$description);
-        $title = "";
-        $description = "";
-        $link = "";
+        printf("<div class='title'><a href='%s'>%s</a></div>", trim($itemLink), htmlspecialchars(trim($itemTitle)) );
+        printf('<div class="description">%s</div></div>',$itemDescription);
+        $itemTitle = "";
+        $itemDescription = "";
+        $itemLink = "";
         $insideitem = false;
     }
 }
 
 function characterData($parser, $data) {
-    global $insideitem, $tag, $title, $description, $link;
+    global $insideitem, $tag, $itemTitle, $itemDescription, $itemLink;
     if ($insideitem) {
         switch ($tag) {
             case "TITLE":
-                $title .= $data;
+                $itemTitle .= $data;
                 break;
             case "DESCRIPTION":
-                $description .= $data;
+                $itemDescription .= $data;
                 break;
             case "LINK":
-                $link .= $data;
+                $itemLink .= $data;
             break;
         }
     }
 }
+//END: XML parser
 
 function loadFeed($url)
 {
-// SET UP THE CURL  - http://rss.netflix.com/QueueRSS?id=P5865869263438512554124161626579012
 $ch = curl_init();
 $timeout = 5; // set to zero for no timeout
 curl_setopt ($ch, CURLOPT_URL, $url);
@@ -91,7 +98,7 @@ color: #660066;
     padding: 10px;
     margin-bottom: 10px;
     
-    background-image:url('http://yap-studio.com/apps/rss/assets/gsprite_mod_default_103008.gif');
+    background-image:url(<?= $appBackgroundImage ?>);
     background-repeat:repeat-x;
     background-position:0 -580px;
     height: 100px;
@@ -147,26 +154,20 @@ color: #660066;
 }
 
 .footer {
-    background-image:url('http://yap-studio.com/apps/rss/assets/gsprite_mod_default_103008.gif');
+    background-image:url(<?= $appBackgroundImage ?>);
     background-repeat:repeat-x;
     background-position:0 -415px;
     height: 70px;
 }
 </style>
 
-<?php
-$title = 'app title';
-$url = 'http://rss.news.yahoo.com/rss/topstories';
-$siteImage = 'http://yap-studio.com/apps/rss/assets/NoPreview.png';
-?>
-
 <div id="header">
 	<div class="colImage">
-	    <img src="<?php echo $siteImage; ?>" width="102" height="102">
+	    <img src="<?php echo $appHeaderImage; ?>" width="102" height="102">
 	</div>
 	<div class="col">
-		<div align="left" class="headOne"><a href="<?php echo $url; ?>"><?php echo $title; ?></a></div>
-		<div align="left" class="description">Website Description would go here</div>
+		<div align="left" class="headOne"><yml:a><?php echo $appTitle; ?></yml:a></div>
+		<div align="left" class="description"><?php echo $appDescription; ?></div>
 		<div align="left" class="grayUrl"> more >></div>
 	</div>
     <div style="clear:both;"></div>
@@ -174,7 +175,7 @@ $siteImage = 'http://yap-studio.com/apps/rss/assets/NoPreview.png';
 </div>
 <div id="wrapper"> 
     <?php
-        $data = loadFeed($url);
+        $data = loadFeed($feedUrl);
         $xml_parser = xml_parser_create();
         xml_set_element_handler($xml_parser, "startElement", "endElement");
         xml_set_character_data_handler($xml_parser, "characterData");
@@ -182,6 +183,4 @@ $siteImage = 'http://yap-studio.com/apps/rss/assets/NoPreview.png';
         xml_parser_free($xml_parser);
     ?>
 </div>
-<div class="footer">
-	<div class="yahooLogo"><!-- <img src="http://yap-studio.com/sports/images/yahoo_logo.png"> --></div>
-</div>
+<div class="footer"><br/></div>
