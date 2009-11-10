@@ -3,15 +3,15 @@
 /**
 * @copyright (c) 2009, Yahoo! Inc. All rights reserved.
 * @license code licensed under the BSD License: license.markdown
-* @package http://github.com/erikeldridge/rss_yap_app
+* @package http://github.com/ydn/rss_yap_app
 **/
 
 // BEGIN: config
 $feedUrl = 'http://rss.news.yahoo.com/rss/asia';
 $appTitle = 'app title';
 $appDescription = 'Website Description would go here';
-$appHeaderImage = 'http://github.com/erikeldridge/rss_yap_app/raw/master/preview.png';
-$appBackgroundImage = 'http://github.com/erikeldridge/rss_yap_app/raw/master/sprite.gif';
+$appHeaderImage = 'http://github.com/ydn/rss_yap_app/raw/master/preview.png';
+$appBackgroundImage = 'http://github.com/ydn/rss_yap_app/raw/master/sprite.gif';
 $appExternalUrl = 'http://example.com';
 // END: config
 

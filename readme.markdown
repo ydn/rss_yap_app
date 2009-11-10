@@ -5,7 +5,7 @@ A simple framework for generating a Yahoo! Application Platform application from
 ## Installation
 
 * Click the `download` button above - OR - 
-* Clone this repository: `git clone git://github.com/erikeldridge/rss_yap_app.git`
+* Clone this repository: `git clone git://github.com/ydn/rss_yap_app.git`
 
 ## Usage
 
@@ -51,4 +51,4 @@ A simple framework for generating a Yahoo! Application Platform application from
 
 * Copyright: (c) 2009, Yahoo! Inc. All rights reserved.
 * License: code licensed under the BSD License:
-* Package: http://github.com/erikeldridge/rss_yap_app
+* Package: http://github.com/ydn/rss_yap_app
