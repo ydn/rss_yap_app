@@ -3,15 +3,15 @@
 /**
 * @copyright (c) 2009, Yahoo! Inc. All rights reserved.
 * @license code licensed under the BSD License: license.markdown
-* @package http://github.com/erikeldridge/yapgen2
+* @package http://github.com/erikeldridge/rss_yap_app
 **/
 
 // BEGIN: config
 $feedUrl = 'http://rss.cnn.com/rss/cnn_topstories.rss';
 $appTitle = 'app title';
 $appDescription = 'Website Description would go here';
-$appHeaderImage = 'http://github.com/erikeldridge/yapgen2/blob/master/preview.png';
-$appBackgroundImage = 'http://github.com/erikeldridge/yapgen2/blob/master/sprite.png';
+$appHeaderImage = 'http://github.com/erikeldridge/rss_yap_app/blob/master/preview.png';
+$appBackgroundImage = 'http://github.com/erikeldridge/rss_yap_app/blob/master/sprite.png';
 // END: config
 
 //BEGIN: XML parser
