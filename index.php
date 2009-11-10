@@ -4,8 +4,8 @@
 $feedUrl = 'http://rss.news.yahoo.com/rss/topstories';
 $appTitle = 'app title';
 $appDescription = 'Website Description would go here';
-$appHeaderImage = 'http://test.erikeldridge.com/yapgen2/preview.png';
-$appBackgroundImage = 'http://test.erikeldridge.com/yapgen2/sprite.gif';
+$appHeaderImage = 'http://github.com/erikeldridge/yapgen2/blob/master/preview.png';
+$appBackgroundImage = 'http://github.com/erikeldridge/yapgen2/blob/master/sprite.png';
 // END: config
 
 //BEGIN: XML parser
