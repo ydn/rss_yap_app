@@ -39,8 +39,9 @@ A simple framework for generating a Yahoo! Application Platform application from
 #### Setting the feed url
 
 * Open index.php in a text editor
-* Set the "$feedUrl" variable at the top of the file to point to the RSS feed of your choice
+* Set the "$feedUrl" variable at the top of the file to point to the RSS feed of your choice, e.g. "http://sports.yahoo.com/sow/rss.xml"
 * Save the file and reload the app
+* Note: by default, yapgen only handles RSS syntax.  Also, some feeds may require special handling.
 
 ## License
 
