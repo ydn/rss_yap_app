@@ -25,6 +25,10 @@ A simple framework for generating a Yahoo! Application Platform application from
            font-size: 12px;
            font-family: Verdana, Arial, Helvetica, sans-serif;
            margin: 10px;
+           background-image: url(http://l.yimg.com/a/i/ww/met/anim_loading_sm_082208.gif);
+           background-repeat: no-repeat;
+           padding-left: 30px;
+           height: 16px;
         }
         </style>
         <yml:include replace="loading">
