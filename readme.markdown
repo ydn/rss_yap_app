@@ -44,6 +44,6 @@ A simple framework for generating a Yahoo! Application Platform application from
 
 ## License
 
-* Copyright: (c) 2009, Erik Eldridge. All rights reserved.
+* Copyright: (c) 2009, Yahoo! Inc. All rights reserved.
 * License: code licensed under the BSD License:
 * Package: http://github.com/erikeldridge/yapgen2
