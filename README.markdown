@@ -18,6 +18,10 @@ A simple framework for generating a Yahoo! Application Platform application from
 * Upload this directory to your server
 * Create a new YAP application
 * Set the base URL of the app to point to the location of this directory on your server
+* Set the small view default code to
+
+        <yml:include>Loading ...</yml:include>
+        
 * Preview your app
 
 
