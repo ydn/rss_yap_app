@@ -41,3 +41,9 @@ A simple framework for generating a Yahoo! Application Platform application from
 * Open index.php in a text editor
 * Set the "$feedUrl" variable at the top of the file to point to the RSS feed of your choice
 * Save the file and reload the app
+
+## License
+
+* Copyright: (c) 2009, Erik Eldridge. All rights reserved.
+* License: code licensed under the BSD License:
+* Package: http://github.com/erikeldridge/yapgen2

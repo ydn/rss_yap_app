@@ -1,7 +1,13 @@
 <?php 
 
+/**
+* @copyright    (c) 2009, Erik Eldridge. All rights reserved.
+* @license  code licensed under the BSD License:
+* @package  http://github.com/erikeldridge/yapgen2
+**/
+
 // BEGIN: config
-$feedUrl = 'http://rss.news.yahoo.com/rss/topstories';
+$feedUrl = 'http://rss.cnn.com/rss/cnn_topstories.rss';
 $appTitle = 'app title';
 $appDescription = 'Website Description would go here';
 $appHeaderImage = 'http://github.com/erikeldridge/yapgen2/blob/master/preview.png';
