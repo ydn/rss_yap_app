@@ -1,4 +1,4 @@
-# YAPgen
+# RSS YAP app
 
 A simple framework for generating a Yahoo! Application Platform application from an RSS feed
 
