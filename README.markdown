@@ -4,7 +4,8 @@ A simple framework for generating a Yahoo! Application Platform application from
 
 ## Installation
 
-Click the "download" link above or `git clone git://github.com/erikeldridge/yapgen2.git`
+* Click the `download` button above or 
+* Clone the repository: `git clone git://github.com/erikeldridge/yapgen2.git`
 
 ## Usage
 
