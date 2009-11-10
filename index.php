@@ -1,9 +1,9 @@
 <?php 
 
 /**
-* @copyright    (c) 2009, Erik Eldridge. All rights reserved.
-* @license  code licensed under the BSD License:
-* @package  http://github.com/erikeldridge/yapgen2
+* @copyright (c) 2009, Yahoo! Inc. All rights reserved.
+* @license code licensed under the BSD License: license.markdown
+* @package http://github.com/erikeldridge/yapgen2
 **/
 
 // BEGIN: config
