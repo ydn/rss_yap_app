@@ -6,8 +6,6 @@ $title = "";
 $description = "";
 $link = "";
 
-
-
 function startElement($parser, $name, $attrs) {
 global $insideitem, $tag, $title, $description, $link;
 if ($insideitem) {
@@ -82,6 +80,7 @@ color: #660066;
 
 #header {
     font-size: 12px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
     padding: 30px 0;
     margin-bottom: 30px;
     position:relative;
@@ -105,6 +104,7 @@ color: #660066;
 
 #wrapper {
     font-size: 12px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
 .headOne {
@@ -134,25 +134,26 @@ span.bottom {
     padding:5px;
 }
 
-.article {
-    font-family: Verdana, Arial, Helvetica, sans-serif;
+#wrapper .article {
+    
     color:#FFFFFF;
-    margin-bottom:20px;
+    margin-bottom:30px;
 }
 
-.article .title {
+#wrapper .article .title {
     font-weight: bold;
+    margin-bottom: 30px;
 }
 
-.article .description {
-margin-right:30px;
+#wrapper .article .description img {
+    margin-right:30px;
 }
 
 .footer {
     background-image:url('http://yap-studio.com/apps/rss/assets/gsprite_mod_default_103008.gif');
     background-repeat:repeat-x;
-    background-position:0 -400px;
-    height:80px;
+    background-position:0 -415px;
+    height: 70px;
 }
 </style>
 
