@@ -64,7 +64,7 @@ If you feed uses custom xml namespaces, such as "y:navigation", "y:search", etc.
 
 1. Copy _templates/basic.php_ as another file.  For this example we'll call the file _special.php_ and save it in the _templates_ directory.
 2. Open _special.php_ in a text editor.
-3. Templates use standard PHP [_alternate syntax_](http://us2.php.net/manual/en/control-structures.alternative-syntax.php) and short tags. Edit the styling, markup, and templating to match the structure of your feed.
+3. Templates use standard PHP [_alternate syntax_](http://us2.php.net/manual/en/control-structures.alternative-syntax.php). Edit the styling, markup, and templating to match the structure of your feed.
 4. Edit _index.php_:
  * Set the _feedUrl_ variable to point to the new feed.
  * Set the _templatePath_ variable to point to _templates/special.php_.
