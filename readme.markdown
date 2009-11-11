@@ -14,9 +14,9 @@ Installation and usage instructions follow, but in brief, this framework operate
 ## Installation
 
 1. Obtain the source code:
- * Click the _download_ button on the Github project page (github.com/erikeldridge/rssyapgen), pick a compression, and save the file.  
+ * Click the _download_ button on the Github project page (github.com/ydn/rss_yap_app), pick a compression, and save the file.  
  OR 
- * Clone this repository: `git clone git://github.com/erikeldridge/rssyapgen.git`
+ * Clone this repository: `git clone git://github.com/ydn/rss_yap_app.git`
 2. Upload the project to a server accessible by YAP
 
 ## Usage
@@ -51,16 +51,16 @@ Installation and usage instructions follow, but in brief, this framework operate
 
 ### Customization
 
-#### Setting the feed url
+#### Using a standard RSS 2.0 feed
 
 1. Open index.php in a text editor
-2. Set the `$feedUrl` variable at the top of the file to point to the RSS 2.0 feed of your choice, e.g. _http://sports.yahoo.com/sow/rss.xml_
+2. Set the `$feedUrl` variable at the top of the file to point to the feed of your choice, e.g. _http://sports.yahoo.com/sow/rss.xml_
 3. Save the file and reload the app
-4. Note: by default, rssyapgen only handles RSS 2.0 syntax.  Some feeds may require special handling.
+4. Note: by default, rss_yap_app only handles RSS 2.0 syntax.  Some feeds may require special handling.
 
 #### Defining special handling for a feed
 
-If you feed uses custom xml namespaces, such as "y:navigation", "y:search", etc., you'll need to create a custom template to render the feed as follows:
+If you are "porting" an existing Yahoo! Front Doors template app, or if your feed uses custom xml namespaces, you may need to create a custom template to render the feed.  Here are instructions for doing so:
 
 1. Copy _templates/basic.php_ as another file.  For this example we'll call the file _special.php_ and save it in the _templates_ directory.
 2. Open _special.php_ in a text editor.
@@ -74,5 +74,5 @@ If you feed uses custom xml namespaces, such as "y:navigation", "y:search", etc.
 ## License
 
 * Copyright: (c) 2009, Yahoo! Inc. All rights reserved.
-* License: code licensed under the BSD License.  See [license.markdown](http://github.com/erikeldridge/rssyapgen/blob/master/license.markdown)
-* Package: http://github.com/erikeldridge/rssyapgen
+* License: code licensed under the BSD License.  See [license.markdown](http://github.com/ydn/rss_yap_app/blob/master/license.markdown)
+* Package: http://github.com/ydn/rss_yap_app
