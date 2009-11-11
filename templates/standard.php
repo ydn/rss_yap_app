@@ -1,7 +1,12 @@
-<!--
-- This is a template for rendering a standard RSS 2.0 feed.
-- This file assumes a variable named $feed has been defined.
--->
+<?php
+
+/**
+ * This is a template for rendering a standard RSS 2.0 feed.
+ * This file assumes a variable named $feedUrl has been defined.
+ */
+
+$feed = simplexml_load_file($feedUrl);
+?>
 
 <style>
 /* wrap app to limit style bleeding from parent */

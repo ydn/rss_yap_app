@@ -1,10 +1,14 @@
-<!-- 
-@This is a template for rendering a feed described as "basic" in the 
-"Yahoo! Developer's Guide for Feed Templates":
-http://public.yahoo.com/~jchu/StdFeedTemplate_TechnicalandDesignGuidance.doc
-Requires: This file assumes a variable named $feed has been defined and 
-contains "basic" data described in the doc referred to above.
- -->
+<?php
+
+/**
+ * This is a template for rendering a feed described as "basic" in the 
+ * "Yahoo! Developer's Guide for Feed Templates": 
+ * http://public.yahoo.com/~jchu/StdFeedTemplate_TechnicalandDesignGuidance.doc
+ * This file assumes a variable named $feedUrl has been defined.
+ */
+
+$feed = simplexml_load_file($feedUrl);
+?>
 
 <style>
 /* wrap app to limit style bleeding from parent */

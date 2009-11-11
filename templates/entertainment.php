@@ -1,4 +1,12 @@
 <?php
+
+/**
+ * This is a template for rendering a feed described as "entertainment" in the 
+ * "Yahoo! Developer's Guide for Feed Templates": 
+ * http://public.yahoo.com/~jchu/StdFeedTemplate_TechnicalandDesignGuidance.doc
+ * This file assumes a variable named $feedUrl has been defined.
+ */
+ 
 $feed = simplexml_load_file($feedUrl);
 
 //BEGIN: preprocess feed data so template isn't too complicated to read
@@ -134,6 +142,7 @@ foreach($feed->channel->item as $item){
 }
 .wrapper .header .navigation .label {
     margin-right: 10px;
+    color: #ccc;
     
     /* align label next to ul (see below) */
     float: left;
@@ -160,7 +169,7 @@ foreach($feed->channel->item as $item){
     margin-bottom: 10px;
     text-transform: uppercase;
 }
-.wrapper .body li .title {
+.wrapper .body .title {
     font-weight: bold;
 }
 .wrapper .body .left {
@@ -168,6 +177,16 @@ foreach($feed->channel->item as $item){
     padding-left: 10px;
 }
 .wrapper .body .left li {
+    margin-bottom: 10px;
+}
+.wrapper .body .left .description {
+    color: #ccc;
+    margin-bottom: 10px;
+}
+.wrapper .body .left .pubDate {
+    color: #ccc;
+}
+.wrapper .body .left .top {
     margin-bottom: 10px;
 }
 .wrapper .body .right {
