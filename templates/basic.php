@@ -8,6 +8,51 @@
  */
 
 $feed = simplexml_load_file($feedUrl);
+
+$data = array(
+    'header' => array(
+        'logo' => array(
+            'link' => $feed->channel->image->link,
+            'url' => $feed->channel->image->url
+        )
+    ),
+    'navigation' => array(),
+    'body' => array()
+);
+
+//define navigation elements
+foreach($feed->channel->children('http://www.yahoo.com/y-namespace')->navigations->navigation as $navigation){
+    $data['navigation'][] = array(
+        'title' => $navigation->attributes()->title,
+        'url' => $navigation->attributes()->url
+    );
+}
+
+//define list items
+foreach($feed->channel->item as $item){
+    
+    //extract image info, if defined
+    $image = null;
+    
+    if(isset($item->children('http://search.yahoo.com/mrss/')->content)){
+        $image = array(
+            'url' => $item->children('http://search.yahoo.com/mrss/')->content->attributes()->url
+        );
+    }
+    
+    //package item data
+    $data['body'][] = array(
+        'image' => $image,
+        'category' => array(
+            'text' => $item->category,
+            'domain' => $item->category->attributes()->domain
+        ),
+        'title' => $item->title,
+        'link' => $item->link,
+        'description' => $item->description,
+        'pubDate' => $item->pubDate,
+    );
+}
 ?>
 
 <style>
@@ -150,7 +195,7 @@ $feed = simplexml_load_file($feedUrl);
 <div class="wrapper">
     <div class="header">
         <div class="logo">
-            <a href="<?= $feed->channel->image->link ?>" class="image"><img src="<?= $feed->channel->image->url ?>"/></a>
+            <a href="<?= $data['header']['logo']['link'] ?>" class="image"><img src="<?= $data['header']['logo']['url'] ?>"/></a>
         
             <!-- kludge: put label below image to correct funky floating  -->
             <span class="label">Go to: </span>
@@ -160,9 +205,9 @@ $feed = simplexml_load_file($feedUrl);
         <div class="navigation">
             <span class="label">Visit: </span>
             <ul>
-                <? foreach($feed->channel->children('http://www.yahoo.com/y-namespace')->navigations->navigation as $navigation): ?>
+                <? foreach($data['navigation'] as $item): ?>
                     <li>
-                        <a href="<?= $navigation->attributes()->url ?>"><?= $navigation->attributes()->title ?></a>
+                        <a href="<?= $item['url'] ?>"><?= $item['title'] ?></a>
                     </li>
                 <? endforeach ?>
             </ul>
@@ -171,21 +216,21 @@ $feed = simplexml_load_file($feedUrl);
     </div>
 
     <ul class="body">
-        <? foreach($feed->channel->item as $item): ?>
+        <? foreach($data['body'] as $item): ?>
             <li>
                 
                 <!-- if there is an image defined, display it -->
-                <? if($item->children('http://search.yahoo.com/mrss/')->content): ?>
+                <? if($item['image']): ?>
                     <div class="image">
-                        <img src="<?= $item->children('http://search.yahoo.com/mrss/')->content->attributes()->url ?>"/>
+                        <img src="<?= $item['image']['url'] ?>"/>
                     </div>
                 <? endif ?>
                 
-                <div class="category"><?= $item->category ?></div>
-                <a href="<?= $item->link ?>" class="title"><?= $item->title ?></a>
-                <div class="description"><?= $item->description ?></div>
-                <a href="<?= $item->category->attributes()->domain ?>" class="moreLink">More in <?= $item->category ?></a>
-                <div class="pubDate"><?= $item->pubDate ?></div>
+                <div class="category"><?= $item['category']['text'] ?></div>
+                <a href="<?= $item['link'] ?>" class="title"><?= $item['title'] ?></a>
+                <div class="description"><?= $item['description'] ?></div>
+                <a href="<?= $item['category']['domain'] ?>" class="moreLink">More in <?= $item['category']['text'] ?></a>
+                <div class="pubDate"><?= $item['pubDate'] ?></div>
                 <div style="clear:both"></div>
             </li>
         <? endforeach ?>
