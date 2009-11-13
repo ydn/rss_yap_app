@@ -6,11 +6,11 @@
 $feedUrl = 'http://news.discovery.com/rss/news/';
 
 //the name of the template to use
-$templatePath = 'templates/standard.php';
+$template = 'standard';
 
 //END: config
 
 //render template
-require $templatePath;
+require "templates/$template.php";
 
 ?>
