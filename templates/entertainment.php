@@ -1,9 +1,12 @@
 <?php
+
+//config
+$feedUrl = 'http://news.discovery.com/rss/news/';
+
+//parse xml
 $feed = simplexml_load_file($feedUrl);
 
-//BEGIN: preprocess feed data so template isn't too complicated to read
-
-//define data structure & plug in easly accessible values
+//format data & set default values to keep template uncluttered
 $data = array(
     'header' => array(
         'logo' => array(

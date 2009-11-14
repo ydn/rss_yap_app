@@ -5,7 +5,45 @@
  * This file assumes a variable named $feedUrl has been defined.
  */
 
+$feedUrl = 'http://news.discovery.com/rss/news/';
+
+//parse xml
 $feed = simplexml_load_file($feedUrl);
+
+//format data & set default values to keep template uncluttered
+$data = array(
+    'header' => array(
+        'title' => $feed->channel->title,
+        'link' => $feed->channel->link
+    ),
+    'body' => array()
+)
+
+//define list items
+foreach($feed->channel->item as $item){
+    
+    //extract image info, if defined
+    $image = null;
+    
+    if(isset($item->children('http://search.yahoo.com/mrss/')->content)){
+        $image = array(
+            'url' => $item->children('http://search.yahoo.com/mrss/')->content->attributes()->url
+        );
+    }
+    
+    //package item data
+    $data['body'][] = array(
+        'image' => $image,
+        'category' => array(
+            'text' => $item->category,
+            'domain' => $item->category->attributes()->domain
+        ),
+        'title' => $item->title,
+        'link' => $item->link,
+        'description' => $item->description,
+        'pubDate' => $item->pubDate,
+    );
+}
 ?>
 
 <style>
