@@ -7,8 +7,8 @@
  * This file assumes a variable named $feedUrl has been defined.
  */
 
-//config
-$feedUrl = 'http://news.discovery.com/rss/news/';
+//sample url
+$feedUrl = 'http://public.yahoo.com/~jchu/basic_feed_structure.xml';
 
 //parse xml
 $feed = simplexml_load_file($feedUrl);
@@ -235,7 +235,7 @@ foreach($feed->channel->item as $item){
                 <a href="<?= $item['link'] ?>" class="title"><?= $item['title'] ?></a>
                 <div class="description"><?= $item['description'] ?></div>
                 <a href="<?= $item['category']['domain'] ?>" class="moreLink">More in <?= $item['category']['text'] ?></a>
-                <div class="pubDate"><?= $item['pubDate' ?></div>
+                <div class="pubDate"><?= $item['pubDate'] ?></div>
                 <div style="clear:both"></div>
             </li>
         <? endforeach ?>
