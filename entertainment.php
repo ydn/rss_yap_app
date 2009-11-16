@@ -1,7 +1,13 @@
 <?php
 
+/**
+ * This is a template for rendering a feed described as "entertainment" in the 
+ * "Yahoo! Developer's Guide for Feed Templates": 
+ * http://public.yahoo.com/~jchu/StdFeedTemplate_TechnicalandDesignGuidance.doc
+ */
+ 
 //config
-$feedUrl = 'http://news.discovery.com/rss/news/';
+$feedUrl = 'http://public.yahoo.com/~jchu/entertainment_feed_structure.xml';
 
 //parse xml
 $feed = simplexml_load_file($feedUrl);
