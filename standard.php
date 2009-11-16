@@ -2,10 +2,9 @@
 
 /**
  * This is a template for rendering a standard RSS 2.0 feed.
- * This file assumes a variable named $feedUrl has been defined.
  */
 
-$feedUrl = 'http://news.discovery.com/rss/news/';
+$feedUrl = 'http://rss.news.yahoo.com/rss/world';
 
 //parse xml
 $feed = simplexml_load_file($feedUrl);
@@ -17,7 +16,7 @@ $data = array(
         'link' => $feed->channel->link
     ),
     'body' => array()
-)
+);
 
 //define list items
 foreach($feed->channel->item as $item){
@@ -118,28 +117,28 @@ foreach($feed->channel->item as $item){
 <div class="wrapper">
     <div class="header">
         <div class="logo">
-            <a href="<?php echo $feed->channel->link ?>" class="title"><?php echo $feed->channel->title ?></a>
+            <a href="<?= $data['header']['link'] ?>" class="title"><?= $data['header']['title'] ?></a>
         </div>
     </div>
     <ul class="body">
-        <?php foreach($feed->channel->item as $item): ?>
+        <? foreach($data['body'] as $item): ?>
             <li>
                 
                 <!-- if there is an image defined, display it -->
-                <?php if($item->children('http://search.yahoo.com/mrss/')->content): ?>
+                <? if($item['image']): ?>
                     <div class="image">
-                        <img src="<?php echo $item->children('http://search.yahoo.com/mrss/')->content->attributes()->url ?>"/>
+                        <!-- <img src="<?= $item['image']['url'] ?>"/> -->
                     </div>
-                <?php endif ?>
+                <? endif ?>
                 
-                <?php if($item->category): ?>
-                    <div class="category"><?php echo $item->category ?></div>
-                <?php endif ?>
-                <a href="<?php echo $item->link ?>" class="title"><?php echo $item->title ?></a>
-                <div class="description"><?php echo $item->description ?></div>
-                <div class="pubDate"><?php echo $item->pubDate ?></div>
+                <? if($item->category): ?>
+                    <div class="category"><?= $item['category'] ?></div>
+                <? endif ?>
+                <a href="<?= $item['link'] ?>" class="title"><?= $item['title'] ?></a>
+                <div class="description"><?= $item['description'] ?></div>
+                <div class="pubDate"><?= $item['pubDate'] ?></div>
                 <div style="clear:both"></div>
             </li>
-        <?php endforeach ?>
+        <? endforeach ?>
     </ul>
 </div>
