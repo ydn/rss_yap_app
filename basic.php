@@ -4,7 +4,6 @@
  * This is a template for rendering a feed described as "basic" in the 
  * "Yahoo! Developer's Guide for Feed Templates": 
  * http://public.yahoo.com/~jchu/StdFeedTemplate_TechnicalandDesignGuidance.doc
- * This file assumes a variable named $feedUrl has been defined.
  */
 
 //sample url
