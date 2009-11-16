@@ -87,12 +87,6 @@ foreach($feed->channel->item as $item){
     /* add whitespace above bottom separator */
     padding-bottom: 10px;
 }
-.wrapper .body li .image {
-    margin-right: 10px;
-    
-    /* align img left of text content */
-    float: left;
-}
 .wrapper .body li .category {
     font-weight: bold;
     margin-bottom: 10px;
@@ -108,6 +102,9 @@ foreach($feed->channel->item as $item){
     margin-bottom: 10px;
     color: #ccc;
 }
+.wrapper .body li .description img {
+    margin-right: 10px;
+}
 .wrapper .body li .pubDate {
     color: #ccc;
     float: right;
@@ -122,20 +119,12 @@ foreach($feed->channel->item as $item){
     </div>
     <ul class="body">
         <? foreach($data['body'] as $item): ?>
-            <li>
-                
-                <!-- if there is an image defined, display it -->
-                <? if($item['image']): ?>
-                    <div class="image">
-                        <!-- <img src="<?= $item['image']['url'] ?>"/> -->
-                    </div>
-                <? endif ?>
-                
-                <? if($item->category): ?>
-                    <div class="category"><?= $item['category'] ?></div>
-                <? endif ?>
+            <li>              
                 <a href="<?= $item['link'] ?>" class="title"><?= $item['title'] ?></a>
+
+                <!-- use image embedded in description instead of the media:content -->  
                 <div class="description"><?= $item['description'] ?></div>
+                
                 <div class="pubDate"><?= $item['pubDate'] ?></div>
                 <div style="clear:both"></div>
             </li>
