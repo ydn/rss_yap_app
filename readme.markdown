@@ -34,7 +34,7 @@ _rss\_yap\_app_ operates by consuming a given feed, parsing the feed data using 
            margin: 10px;
            
            <!-- the standard yap loading animation -->
-           background-image: url(http://l.yimg.com/a/i/ww/met/anim\_loading\_sm_082208.gif);
+           background-image: url(http://l.yimg.com/a/i/ww/met/anim_loading_sm_082208.gif);
            
            background-repeat: no-repeat;
            padding-left: 30px;
