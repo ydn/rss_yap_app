@@ -6,8 +6,15 @@
 
 $feedUrl = 'http://rss.news.yahoo.com/rss/world';
 
+//fetch rss xml in a commonly available way
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $feedUrl);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$xmlString = curl_exec($ch);
+curl_close($ch);
+
 //parse xml
-$feed = simplexml_load_file($feedUrl);
+$feed = simplexml_load_string($xmlString);
 
 //format data & set default values to keep template uncluttered
 $data = array(
