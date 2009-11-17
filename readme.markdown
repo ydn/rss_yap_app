@@ -13,6 +13,7 @@ _rss\_yap\_app_ operates by consuming a given feed, parsing the feed data using 
 
 * PHP 5.2 with the following enabled:
    * [SimpleXML](http://us2.php.net/simplexml)
+   * [cURL](http://us.php.net/manual/en/ref.curl.php)
    * The [short form](http://www.php.net/manual/en/ini.core.php) of PHP's open tags
 * A server that can serve content to YAP, i.e., a server accessible via a valid url and capable of receiving POST requests.
 
