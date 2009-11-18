@@ -41,8 +41,7 @@ foreach($feed->channel->item as $item){
     $data['body'][] = array(
         'image' => $image,
         'category' => array(
-            'text' => $item->category,
-            'domain' => $item->category->attributes()->domain
+            'text' => $item->category
         ),
         'title' => $item->title,
         'link' => $item->link,
