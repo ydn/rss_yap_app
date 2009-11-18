@@ -6,9 +6,8 @@
 
 $feedUrl = 'http://rss.news.yahoo.com/rss/world';
 
-//fetch rss xml in a commonly available way
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $feedUrl);
+//fetch rss xml using curl, which is more commonly available than simplexml_load_file
+$ch = curl_init($feedUrl);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $xmlString = curl_exec($ch);
 curl_close($ch);
