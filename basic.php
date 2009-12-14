@@ -16,8 +16,11 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $xmlString = curl_exec($ch);
 curl_close($ch);
 
+//ensure string is utf-8 encoded for simplexml_load_string()
+$utf8String = utf8_encode($xmlString);
+
 //parse xml
-$feed = simplexml_load_string($xmlString);
+$feed = simplexml_load_string($utf8String);
 
 //format data & set default values to keep template uncluttered
 $data = array(
